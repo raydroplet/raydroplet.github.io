@@ -8,15 +8,15 @@ date: 2026-03-05
 
 ## State of the Art
 
-> Cyberpunk screenshot with a footnote
+<img src="/project-abm/assets/cyberpunk.png" alt="Description">
 
-When you see a game with incredible graphics you're often amazed by how good it looks. This is no coincidence. It's much easier to sell a pretty picture and convince someone to try it out if it looks good on screen. But underneath all this magic there is often a carefully orchestrated mess of systems. Each one only cares about its own job, while you, as the player, expect them to all work in harmony. 
+When you see a game with incredible graphics you're often amazed by how good it looks. This is no coincidence. It's much easier to sell a pretty picture and convince someone to try it out if it looks good on screen. But underneath all this magic there is often a carefully orchestrated mess of systems. Each one caring about its own job, while you, as the player, expects them to all work in harmony. 
 
 You might have a physics engine with its set of rigid bodies, a rendering engine handling meshes, materials and shaders, an audio engine for spatial sound emitters, an AI managing navmeshes and behavior trees and so on. If you, for example, decide that an NPC in your world must also hear audio, you're in a lot of trouble, because an Audio engine may only care about playing sounds to your computer, not having them be perceived by the entities in your world.
 
 Often a lot of wiring up is necessary to keep everything cohesive. That's a development difficulty and also time consuming.
 
-> skyrim bucket (video/gif) scene with a footnote
+<img src="/project-abm/assets/skyrim.jpg" alt="Description">
 
 ### Trully alive worlds
 
@@ -26,16 +26,16 @@ When you look at games like Rain World or Dwarf Fortress, the magic doesn't come
 
 Games like this are rare, because standard engines ~~are built for orchestrating~~ a scene, but to get a rich simulation, we need to build for emergence, which has as it foundation the concept of perception.
 
-> rain world gif
+<img src="/project-abm/assets/rain_world.webp" alt="Description">
 
 ## Designing a Perception Engine
 
-- add a brief introduction here
+- why?
 
 ### A simple model
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/wolf_chase.mp4" type="video/mp4">
+  <source src="/project-abm/assets/motion/wolf_chase.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -48,7 +48,7 @@ Given this scenario, how do we represent all those shapes and behaviors in code?
 ### The naive Approach
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/naive_list.mp4" type="video/mp4">
+  <source src="/project-abm/assets/motion/naive_list.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -57,7 +57,7 @@ The simplest approach is to create a signal struct, and throw everything into a 
 ### The sparse grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/sparse_grid.mp4" type="video/mp4">
+  <source src="/project-abm/assets/motion/sparse_grid.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -68,7 +68,7 @@ This solves the previous scaling issue, but it introduces another problem. Since
 ### The multi level grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/multi_grid.mp4" type="video/mp4">
+  <source src="/project-abm/assets/motion/multi_grid.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -80,7 +80,7 @@ The result is essentially being able to stack multiple grids on top of each othe
 ## Blows and whistles
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/ecs.mp4" type="video/mp4">
+  <source src="/project-abm/assets/motion/ecs.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -92,7 +92,7 @@ Finally, the last thing we'll be needing is rendering. We add yet another functi
 ## A more realistic perception
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/occlusion.mp4" type="video/mp4">
+  <source src="/project-abm/assets/motion/occlusion.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
