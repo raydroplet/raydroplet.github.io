@@ -4,7 +4,9 @@ title: "Project ABM"
 date: 2026-03-05
 ---
 
-> This is a write-up of a small perception engine I built in Rust. The goal was simple: give simulated entities a believable sense of the world around them. Getting there was less simple.
+> This is a write-up of a small perception engine I built in Rust. The goal was simple: give simulated entities a believable sense of the world around them.
+>
+> Getting there was less simple.
 
 ## State of the Art
 
@@ -61,14 +63,14 @@ The simplest approach is to create a signal struct, and throw everything into a 
   Your browser does not support the video tag.
 </video>
 
-A better solution is to have what is called a sparse grid. By mapping X, Y coordinates to a tile object, and having it be a key to a hashmap, with the values being an array of signals, we can store those based on their positions. The way it works is that the world is divided in a grid, and only the populated tiles hold a list of their current signals, hence the name sparse. When an entity needs to query for close interactions, it just needs to check its surroundings. For any tile that is defined, it simply iterates the items stored there.
+A better solution is to have what is called a sparse grid. By mapping x/y coordinates to a tile object, and having it be a key to a hashmap, with the values being an array of signals, we can store those based on their positions. The way it works is that the world is divided in a grid, and only the populated tiles hold a list of their current signals, hence the name sparse. When an entity needs to query for close interactions, it just needs to check its surroundings. For any tile that is defined, it simply iterates the items stored there.
 
 This solves the previous scaling issue, but it introduces another problem. Since the engine interprets signals as points when determining which tile they belong to, if any of them are bigger than the tile itself, we may run into a case where a far away signal that should be perceived is ignored, because the system only scans the tiles in close proximity.
 
 ### The multi level grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/project-abm/assets/motion/multi_grid.mp4" type="video/mp4">
+  <source src="{{ '/assets/motion/occlusion.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -84,7 +86,9 @@ The result is essentially being able to stack multiple grids on top of each othe
   Your browser does not support the video tag.
 </video>
 
-With our perception problem solved, I shifted my energy into making this more of a usable engine. To move away from static circles and allow our entities more dynamic behavior, I decided to integrate an Entity Component System, using the hecs library. First, we define our components. These are pure data structs representing the properties of our objects, such as Transform for positions, Velocity for movement, and the Emitter itself. The ECS allows us to associate a unique identifier with a combination of those data components, and write isolated systems to manipulate them, like one for basic physics.
+With our perception problem solved, I shifted my energy into making this more of a usable engine. To move away from static circles and allow our entities more dynamic behavior, I decided to integrate an Entity Component System, using the hecs library.
+
+First, we define our components. These are pure data structs representing the properties of our objects, such as Transform for positions, Velocity for movement, and the Emitter itself. The ECS allows us to associate a unique identifier with a combination of those data components, and write isolated systems to manipulate them, like one for basic physics.
 
 Finally, the last thing we'll be needing is rendering. We add yet another function, the render. Its purpose is to gather information about the current state of the system, and pack the relevant data into a FrameData object. This FrameData is then sent, as needed, to a render context, so that the renderer may interpret and draw it as it sees fit.
 
