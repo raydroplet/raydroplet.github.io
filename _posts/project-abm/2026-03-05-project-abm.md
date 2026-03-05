@@ -90,7 +90,12 @@ Finally, the last thing we'll be needing is rendering. We add yet another functi
 
 ---
 ## A more realistic perception
-- to be elaborated
+
+<video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
+  <source src="/assets/motion/occlusion.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
 Although the system works as intended, the previous scan was too permissive. I wanted some sort of mechanism that allows a signal to be occluded. To achieve this, I defined a special scan function. It works like this.
 
