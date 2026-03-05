@@ -12,7 +12,7 @@ mode: dark # default theme "dark" | "light"
 author:
   name: Ray Droplet # author name
   bio: >- # tell to the world
-    Software Engineer. <a href="https://github.com/raydroplet/" target="_blank" rel="noopener">@github</a>.
+    Software Engineer <a href="https://github.com/raydroplet/" target="_blank" rel="noopener">@github</a>.
   username: raydroplet # general username
   github: raydroplet # github username
   # twitter: twitter_username # twitter username
