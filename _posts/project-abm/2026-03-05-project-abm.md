@@ -2,6 +2,10 @@
 layout: post
 title: "Project ABM"
 date: 2026-03-05
+image: "assets/cyberpunk.png"
+image: "assets/rain_world.png"
+image: "assets/skyrim.png"
+video: "assets/motion/ecs.mp4"
 ---
 
 > This is a write-up of a small perception engine I built in Rust. The goal was simple: give simulated entities a believable sense of the world around them.
@@ -10,7 +14,7 @@ date: 2026-03-05
 
 ## State of the Art
 
-<img src="/assets/cyberpunk.png" alt="Description">
+<img src="assets/cyberpunk.png" alt="Description">
 
 When you see a game with incredible graphics you're often amazed by how good it looks. This is no coincidence. It's much easier to sell a pretty picture and convince someone to try it out if it looks good on screen. But underneath all this magic there is often a carefully orchestrated mess of systems. Each one caring about its own job, while you, as the player, expects them to all work in harmony. 
 
@@ -18,7 +22,7 @@ You might have a physics engine with its set of rigid bodies, a rendering engine
 
 Often a lot of wiring up is necessary to keep everything cohesive. That's a development difficulty and also time consuming.
 
-<img src="/assets/skyrim.jpg" alt="Description">
+<img src="assets/skyrim.jpg" alt="Description">
 
 ### Trully alive worlds
 
@@ -28,7 +32,7 @@ When you look at games like Rain World or Dwarf Fortress, the magic doesn't come
 
 Games like this are rare, because standard engines ~~are built for orchestrating~~ a scene, but to get a rich simulation, we need to build for emergence, which has as it foundation the concept of perception.
 
-<img src="/assets/rain_world.webp" alt="Description">
+<img src="assets/rain_world.webp" alt="Description">
 
 ## Designing a Perception Engine
 
@@ -82,7 +86,7 @@ The result is essentially being able to stack multiple grids on top of each othe
 ## Blows and whistles
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/ecs.mp4" type="video/mp4">
+  <source src="assets/motion/ecs.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
