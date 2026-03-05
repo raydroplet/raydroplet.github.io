@@ -4,6 +4,8 @@ title: "Project ABM"
 date: 2026-03-05
 ---
 
+> [!Warning] WIP. this was generated to test the formatting. will be rewritten.
+
 ## Introduction
 
 Games are fake. The industry is obsessed with visuals, and to be fair, they do look incredible. But underneath that shiny surface, every other system—be it collision, animation, or AI—is often just there for convenience. It isn't an actual part of a living world; it acts mostly to support the illusion you're seeing.
