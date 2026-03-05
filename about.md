@@ -13,4 +13,4 @@ This website is statically generated with Jekyll, hosted on GitHub Pages, and ru
 
 If you want to discuss software design, system architecture, or just point out a broken link, feel free to drop a message.
 
-- [Github.com/{{ site.author.github }}](https://github.com/{{ site.author.github }})
+[github.com/{{ site.author.github }}](https://github.com/{{ site.author.github }})
