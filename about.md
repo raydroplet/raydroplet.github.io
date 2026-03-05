@@ -9,8 +9,8 @@ comments: false
 
 I am a software engineer who values building things from the ground up. This blog serves as an archive of my experiments, design decisions, and general development logs.
 
-This site is statically generated with Jekyll, hosted on GitHub Pages, and runs on the minimalist [Klise](https://github.com/piharpi/jekyll-klise) theme. I write things down because the act of documentation is the best way to ensure complex concepts actually stick.
+This website is statically generated with Jekyll, hosted on GitHub Pages, and runs on the minimalist [Klise](https://github.com/piharpi/jekyll-klise) theme.
 
 If you want to discuss software design, system architecture, or just point out a broken link, feel free to drop a message.
 
-- [github.com/{{ site.author.github }}](https://github.com/{{ site.author.github }})
+- [Github.com/{{ site.author.github }}](https://github.com/{{ site.author.github }})
