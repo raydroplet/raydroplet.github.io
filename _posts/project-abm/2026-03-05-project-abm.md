@@ -59,7 +59,7 @@ The simplest approach is to create a signal struct, and throw everything into a 
 ### The sparse grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/project-abm/assets/motion/sparse_grid.mp4" type="video/mp4">
+  <source src="{{ '/project-abm/assets/motion/sparse_grid.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -70,7 +70,7 @@ This solves the previous scaling issue, but it introduces another problem. Since
 ### The multi level grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ '/assets/motion/occlusion.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ '/project-abm/assets/motion/occlusion.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
