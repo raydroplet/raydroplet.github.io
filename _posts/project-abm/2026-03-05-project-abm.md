@@ -5,7 +5,12 @@ date: 2026-03-05
 image: "assets/cyberpunk.png"
 image: "assets/rain_world.png"
 image: "assets/skyrim.png"
+video: "assets/motion/wolf_chase.mp4"
+video: "assets/motion/naive_list.mp4"
+video: "assets/motion/sparse_grid.mp4"
+video: "assets/motion/multi_grid.mp4"
 video: "assets/motion/ecs.mp4"
+video: "assets/motion/occlusion.mp4"
 ---
 
 > This is a write-up of a small perception engine I built in Rust. The goal was simple: give simulated entities a believable sense of the world around them.
@@ -41,7 +46,7 @@ Games like this are rare, because standard engines ~~are built for orchestrating
 ### A simple model
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/wolf_chase.mp4" type="video/mp4">
+  <source src="assets/motion/wolf_chase.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -54,7 +59,7 @@ Given this scenario, how do we represent all those shapes and behaviors in code?
 ### The naive Approach
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/naive_list.mp4" type="video/mp4">
+  <source src="assets/motion/naive_list.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -63,7 +68,7 @@ The simplest approach is to create a signal struct, and throw everything into a 
 ### The sparse grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ '/assets/motion/sparse_grid.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/motion/sparse_grid.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -74,7 +79,7 @@ This solves the previous scaling issue, but it introduces another problem. Since
 ### The multi level grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ '/assets/motion/occlusion.mp4' | relative_url }}" type="video/mp4">
+  <source src="assets/motion/multi_grid.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -100,7 +105,7 @@ Finally, the last thing we'll be needing is rendering. We add yet another functi
 ## A more realistic perception
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/motion/occlusion.mp4" type="video/mp4">
+  <source src="assets/motion/occlusion.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
