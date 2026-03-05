@@ -34,9 +34,10 @@ Games like this are rare, because standard engines are built for orchestrating a
 
 ### A simple model for perception
 
-Let's follow the below example:
-
-> motion canvas embededed animation
+<video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
+  <source src="/assets/motion/wolf_chase.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 Say I draw a circle, which represents the bounds of a player, and some trees scattered across a scene. As the player walks, they emit footsteps that exist for a short period of time. If there is something in range that perceives noise, like a wolf hiding in the forest, it could react to sounds and move accordingly. 
 
