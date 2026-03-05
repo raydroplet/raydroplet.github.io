@@ -4,7 +4,7 @@ title: "Project ABM"
 date: 2026-03-05
 ---
 
-> [!Warning] WIP. this was generated to test the formatting. will be rewritten.
+> [!Warning] WIP. this is a draft. it is currently being written.
 
 ## Introduction
 
