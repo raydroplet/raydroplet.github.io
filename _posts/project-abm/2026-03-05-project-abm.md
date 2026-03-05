@@ -6,52 +6,43 @@ date: 2026-03-05
 
 > [!Warning] WIP. this is a draft. it is currently being written.
 
-## Introduction
+> This is a write-up of a small perception engine I built in Rust. The goal was simple: give simulated entities a believable sense of the world around them. Getting there was less simple.
 
-Games are fake, and the industry is obsessed with visuals.
+## State of the Art
 
 > Cyberpunk screenshot with a footnote
 
-They do look incredible, but underneath, every system, be it collision, animation, or AI, is there for convenience, not as an actual part of it, acting mostly to support the illusion you're seeing.
+When you see a game with incredible graphics you're often amazed by how good it looks. This is no coincidence. It's much easier to sell a pretty picture and convince someone to try it out if it looks good on screen. But underneath all this magic there is often a carefully orchestrated mess of systems. Each one only cares about its own job, while you, as the player, expect them to all work in harmony. 
 
-- explain how an game engine has different systems
-- explain how they have difficult coordinating with each other since each one only cares about it's own state and simulation needs
-- talk about all the wiring needed to keep everything cohesive and that's a development difficulty and time consuming
+You might have a physics engine with its set of rigid bodies, a rendering engine handling meshes, materials and shaders, an audio engine for spatial sound emitters, an AI managing navmeshes and behavior trees and so on. If you, for example, decide that an NPC in your world must also hear audio, you're in a lot of trouble, because an Audio engine may only care about playing sounds to your computer, not having them be perceived by the entities in your world.
 
-------
-### Not so intelligent
+Often a lot of wiring up is necessary to keep everything cohesive. That's a development difficulty and also time consuming.
 
 > skyrim bucket (video/gif) scene with a footnote
-
-Even when complex behavior looks real at first, it’s usually scripted. That’s because those entities can’t actually perceive the world the way we do.
-
-- talk about how perception works in usual indie/AAA games
-- talk about it's limitations
 
 ### Trully alive worlds
 
 The most authentic experiences, however, aren't locked to a staged environment. Instead, they place the player in a world that's actually alive. One that traditional scripting cannot replicate.
 
-- talk about games that actually simulate a world in a emergent way
-- rain world, dwarf fortress are the two examples that may be talked here
+When you look at games like Rain World or Dwarf Fortress, the magic doesn't come from a level designer planning every single interaction. It comes from emergency. The entities operates by reading the state of their surrounds and following certain rules, dynamically reacting to the enviroment without a hardcoded trigger.
 
-Games like this are rare, because standard engines are built for orchestrating a scene, but to get a rich simulation, we need to build for emergence.
+Games like this are rare, because standard engines are built for orchestrating a scene, but to get a rich simulation, we need to build for emergence, which has as it foundation the concept of perception.
 
-### A simple model for perception
-
-- briefly explain that besides all the blows and whistles, backend simulations relly on simple logic and elements.
-- explain the wolf model (it's already explained below)
-
-
-Let's say I draw a circle, which represents the bounds of a player, and some trees scattered across the scene. As the player walks, they emit footsteps that exist for a short period of time. If there is something in range that perceives noise, like a wolf hiding in the forest, it could react to sounds and move accordingly. We can also have a vision cone for the wolf. So the wolf now has a direction he may be looking at. It turns in reaction to a certain noise, the footstep, sees the player, and starts walking in their direction, while avoiding the trees, considering they block its path.
-
-- conclude saying we will be implementing this in rust
-
----
+> rain world gif
 
 ## Designing a Perception Engine
 
-- introduce with something like "Considering the wolf and tree example, how to represent all those overlapping shapes and intersections in code?"
+### A simple model for perception
+
+Let's follow the below example:
+
+> motion canvas embededed animation
+
+Say I draw a circle, which represents the bounds of a player, and some trees scattered across a scene. As the player walks, they emit footsteps that exist for a short period of time. If there is something in range that perceives noise, like a wolf hiding in the forest, it could react to sounds and move accordingly. 
+
+We can also have a vision cone for the wolf. So the wolf now has a direction he may be looking at. It turns in reaction to a certain noise, the footstep, sees the player, and starts walking in their direction, while avoiding the trees, considering they block its path.
+
+Considering this scenario, how do we represent all those shapes and behaviors in code?
 
 ### The naive Approach
 - to be elaborated
