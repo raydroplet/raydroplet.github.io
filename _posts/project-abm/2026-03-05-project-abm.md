@@ -19,7 +19,10 @@ video: "/project-abm/assets/motion/occlusion.mp4"
 
 ## State of the Art
 
-<img src="/project-abm/assets/cyberpunk.png" alt="Description">
+<figure>
+<img src="/project-abm/assets/cyberpunk.png" alt="Image">
+<figcaption>Fig 6. evaluasi shell dari tahun ke tahun.</figcaption>
+</figure>
 
 When you see a game with incredible graphics you're often amazed by how good it looks. This is no coincidence. It's much easier to sell a pretty picture and convince someone to try it out if it looks good on screen. But underneath all this magic there is often a carefully orchestrated mess of systems. Each one caring about its own job, while you, as the player, expects them to all work in harmony. 
 
@@ -27,7 +30,10 @@ You might have a physics engine with its set of rigid bodies, a rendering engine
 
 Often a lot of wiring up is necessary to keep everything cohesive. That's a development difficulty and also time consuming.
 
-<img src="/project-abm/assets/skyrim.jpg" alt="Description">
+<figure>
+<img src="/project-abm/assets/skyrim.jpg" alt="Image">
+<figcaption>Fig 6. evaluasi shell dari tahun ke tahun.</figcaption>
+</figure>
 
 ### Trully alive worlds
 
@@ -37,7 +43,10 @@ When you look at games like Rain World or Dwarf Fortress, the magic doesn't come
 
 Games like this are rare, because standard engines ~~are built for orchestrating~~ a scene, but to get a rich simulation, we need to build for emergence, which has as it foundation the concept of perception.
 
-<img src="/project-abm/assets/rain_world.webp" alt="Description">
+<figure>
+<img src="/project-abm/assets/rain_world.webp" alt="Image">
+<figcaption>Fig 6. evaluasi shell dari tahun ke tahun.</figcaption>
+</figure>
 
 ## Designing a Perception Engine
 
@@ -63,7 +72,9 @@ Given this scenario, how do we represent all those shapes and behaviors in code?
   Your browser does not support the video tag.
 </video>
 
-The simplest approach is to create a signal struct, and throw everything into a massive list. At each scan, the entities which care about their surroundings check every other to see if there's any intersection between their shapes, in order to decide if it's a relevant interaction or not. This, however, does not scale well as the simulation grows. Since as the number of entities increases, the required checks rise exponentially. Instead, we need some sort of spatial partitioning, so that there's only a need to query the signals in close proximity.
+The simplest approach is to create a signal struct, and throw everything into a massive list. At each scan, the entities which care about their surroundings check every other to see if there's any intersection between their shapes, in order to decide if it's a relevant interaction or not.
+
+This, however, does not scale well as the simulation grows. Since as the number of entities increases, the required checks rise exponentially. Instead, we need some sort of spatial partitioning, so that there's only a need to query the signals in close proximity.
 
 ### The sparse grid
 
@@ -72,7 +83,9 @@ The simplest approach is to create a signal struct, and throw everything into a 
   Your browser does not support the video tag.
 </video>
 
-A better solution is to have what is called a sparse grid. By mapping x/y coordinates to a tile object, and having it be a key to a hashmap, with the values being an array of signals, we can store those based on their positions. The way it works is that the world is divided in a grid, and only the populated tiles hold a list of their current signals, hence the name sparse. When an entity needs to query for close interactions, it just needs to check its surroundings. For any tile that is defined, it simply iterates the items stored there.
+A better solution is to have what is called a sparse grid. By mapping x/y coordinates to a tile object, and having it be a key to a hashmap, with the values being an array of signals, we can store those based on their positions.
+
+The way it works is that the world is divided in a grid, and only the populated tiles hold a list of their current signals, hence the name sparse. When an entity needs to query for close interactions, it just needs to check its surroundings. For any tile that is defined, it simply iterates the items stored there.
 
 This solves the previous scaling issue, but it introduces another problem. Since the engine interprets signals as points when determining which tile they belong to, if any of them are bigger than the tile itself, we may run into a case where a far away signal that should be perceived is ignored, because the system only scans the tiles in close proximity.
 
