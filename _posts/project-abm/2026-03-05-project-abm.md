@@ -115,7 +115,7 @@ Although the system works as intended, the previous scan was too permissive. I w
 
 We first do our usual spatial scan, and sort the returned targets by distance, from closest to farthest. Then we define projection, shadow, and visibility bitmasks, to assist in identifying which portions of the signals are actually seen or hidden. We start with the closest one, project its shape onto the outer perimeter, and map this range onto the projection mask. Next, we subtract the shadow mask from the projection, resulting in what is actually seen.
 
-We repeat the process. Red signals are blockers, so they get mapped to the shadow mask. On our fourth signal, something different happens. After subtracting the shadow mask from the projection, the blocked sections are filtered out, leaving the signal partially visible. The last signal is fully behind a shadow, so it gets hidden completely.
+We repeat the process. The red signals are blockers, so they get mapped to the shadow mask. On our fourth signal, something different happens. After subtracting the shadow mask from the projection, the blocked sections are filtered out, leaving the signal partially visible. The last signal is fully behind a shadow, so it gets hidden completely.
 
 Although having a limited number of bits is not suited for rendering, where you need pixel-perfect ranges, this simplified model maps nicely to our goal of having more realistic perception and emergent behavior.
 
@@ -125,12 +125,14 @@ Although having a limited number of bits is not suited for rendering, where you 
   <source src="{{ 'assets/project-abm/engine1.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-<figcaption>A thousand signals scanning their surroundings and colliding<figcaption>
+<figcaption>A thousand signals scanning their surroundings and colliding</figcaption>
 
 <figure>
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
   <source src="{{ 'assets/project-abm/engine2.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-<figcaption>The wolf example from the started implemented</figcaption>
+<figcaption>The wolf example from the starte, implemented on top of the signal field</figcaption>
 </figure>
+
+The source code is available on [GitHub](https://github.com/raydroplet/project-abm), implemented in the Rust programming language. This is a small experiment but it already displays some of the capabilities we wanted.
