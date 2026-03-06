@@ -20,8 +20,8 @@ video: "/project-abm/assets/motion/occlusion.mp4"
 ## State of the Art
 
 <figure>
-<img src="/project-abm/assets/cyberpunk.png" alt="Image">
-<figcaption>Fig 6. evaluasi shell dari tahun ke tahun.</figcaption>
+<img src="{{ 'assets/cyberpunk.png' | relative_url }}" alt="Image">
+<figcaption>...</figcaption>
 </figure>
 
 When you see a game with incredible graphics you're often amazed by how good it looks. This is no coincidence. It's much easier to sell a pretty picture and convince someone to try it out if it looks good on screen. But underneath all this magic there is often a carefully orchestrated mess of systems. Each one caring about its own job, while you, as the player, expects them to all work in harmony. 
