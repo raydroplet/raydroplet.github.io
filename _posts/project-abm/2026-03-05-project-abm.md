@@ -12,7 +12,7 @@ date: 2026-03-05
 
 <figure>
 <img src="{{ 'assets/project-abm/cyberpunk.png' | relative_url }}" alt="Cyberpunk aesthetic image">
-<figcaption>...</figcaption>
+<figcaption> </figcaption>
 </figure>
 
 When you see a game with incredible graphics you're often amazed by how good it looks. This is no coincidence. It's much easier to sell a pretty picture and convince someone to try it out if it looks good on screen. But underneath all this magic there is often a carefully orchestrated mess of systems. Each one caring about its own job, while you, as the player, expects them to all work in harmony. 
@@ -23,7 +23,7 @@ Often a lot of wiring up is necessary to keep everything cohesive. That's a deve
 
 <figure>
 <img src="{{ 'assets/project-abm/skyrim.jpg' | relative_url }}" alt="Skyrim NPC with a bucket on their head">
-<figcaption>The classic Skyrim bucket exploit: a perfect example of how physical occlusion affects AI line-of-sight.</figcaption>
+<figcaption> </figcaption>
 </figure>
 
 ### Trully alive worlds
@@ -36,7 +36,7 @@ Games like this are rare, because standard engines ~~are built for orchestrating
 
 <figure>
 <img src="{{ 'assets/project-abm/rain_world.webp' | relative_url }}" alt="Rain World gameplay">
-<figcaption>...</figcaption>
+<figcaption> </figcaption>
 </figure>
 
 ## Designing a Perception Engine
@@ -91,7 +91,6 @@ The fix here is straightforward. Just have bigger tiles. We go back to the tile 
 
 The result is essentially being able to stack multiple grids on top of each other. The signal field then keeps track of the active levels, and on each scan, we iterate those, checking the surroundings. No matter how close or distant the signal may be, this guarantees that it will get perceived just fine.
 
-------
 ## Blows and whistles
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
@@ -105,7 +104,6 @@ First, we define our components. These are pure data structs representing the pr
 
 Finally, the last thing we'll be needing is rendering. We add yet another function, the render. Its purpose is to gather information about the current state of the system, and pack the relevant data into a FrameData object. This FrameData is then sent, as needed, to a render context, so that the renderer may interpret and draw it as it sees fit.
 
----
 ## A more realistic perception
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
@@ -121,7 +119,18 @@ We repeat the process. The signals are blockers, so they get mapped to the shado
 
 Although having a limited number of bits is not suited for rendering, where you need pixel-perfect ranges, this simplified model maps nicely to our goal of having more realistic perception and emergent behavior.
 
-----
-## End Result
-- show the 1000 bouncing balls
-- show the wolf example
+## The running system
+
+<video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
+  <source src="{{ 'assets/project-abm/engine1.mp4' | relative_url }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<figcaption>A thousand signals colliding scanning their surroundings and colliding<figcaption>
+
+<figure>
+<video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
+  <source src="{{ 'assets/project-abm/engine2.mp4' | relative_url }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<figcaption>The wolf example from the started implemented</figcaption>
+</figure>
