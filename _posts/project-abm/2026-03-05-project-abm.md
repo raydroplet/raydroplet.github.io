@@ -125,7 +125,7 @@ Although having a limited number of bits is not suited for rendering, where you 
   <source src="{{ 'assets/project-abm/engine1.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-<figcaption>A thousand signals colliding scanning their surroundings and colliding<figcaption>
+<figcaption>A thousand signals scanning their surroundings and colliding<figcaption>
 
 <figure>
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
