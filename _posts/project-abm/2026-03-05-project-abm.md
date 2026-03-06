@@ -46,7 +46,7 @@ Games like this are rare, because standard engines ~~are built for orchestrating
 ### A simple model
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="assets/motion/wolf_chase.mp4" type="video/mp4">
+  <source src="{{ 'assets/motion/wolf_chase.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -59,7 +59,7 @@ Given this scenario, how do we represent all those shapes and behaviors in code?
 ### The naive Approach
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="assets/motion/naive_list.mp4" type="video/mp4">
+  <source src="{{ 'assets/motion/naive_list.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -79,7 +79,7 @@ This solves the previous scaling issue, but it introduces another problem. Since
 ### The multi level grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="assets/motion/multi_grid.mp4" type="video/mp4">
+  <source src="{{ 'assets/motion/multi_grid.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -91,7 +91,7 @@ The result is essentially being able to stack multiple grids on top of each othe
 ## Blows and whistles
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="assets/motion/ecs.mp4" type="video/mp4">
+  <source src="{{ 'assets/motion/ecs.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -105,7 +105,7 @@ Finally, the last thing we'll be needing is rendering. We add yet another functi
 ## A more realistic perception
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="assets/motion/occlusion.mp4" type="video/mp4">
+  <source src="{{ 'assets/motion/occlusion.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
