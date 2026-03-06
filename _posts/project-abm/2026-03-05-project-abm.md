@@ -11,7 +11,7 @@ date: 2026-03-05
 ## State of the Art
 
 <figure>
-<img src="/assets/project-abm/cyberpunk.png" alt="Image">
+<img src="{{ 'assets/project-abm/cyberpunk.png' | relative_url }}" alt="Cyberpunk aesthetic image">
 <figcaption>...</figcaption>
 </figure>
 
@@ -22,8 +22,8 @@ You might have a physics engine with its set of rigid bodies, a rendering engine
 Often a lot of wiring up is necessary to keep everything cohesive. That's a development difficulty and also time consuming.
 
 <figure>
-<img src="/assets/project-abm/skyrim.jpg" alt="Image">
-<figcaption>...</figcaption>
+<img src="{{ 'assets/project-abm/skyrim.jpg' | relative_url }}" alt="Skyrim NPC with a bucket on their head">
+<figcaption>The classic Skyrim bucket exploit: a perfect example of how physical occlusion affects AI line-of-sight.</figcaption>
 </figure>
 
 ### Trully alive worlds
@@ -35,7 +35,7 @@ When you look at games like Rain World or Dwarf Fortress, the magic doesn't come
 Games like this are rare, because standard engines ~~are built for orchestrating~~ a scene, but to get a rich simulation, we need to build for emergence, which has as it foundation the concept of perception.
 
 <figure>
-<img src="/assets/project-abm/rain_world.webp" alt="Image">
+<img src="{{ 'assets/project-abm/rain_world.webp' | relative_url }}" alt="Rain World gameplay">
 <figcaption>...</figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ Games like this are rare, because standard engines ~~are built for orchestrating
 ### A simple model
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/project-abm/motion/wolf_chase.mp4" type="video/mp4">
+  <source src="{{ 'assets/project-abm/motion/wolf_chase.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -59,7 +59,7 @@ Given this scenario, how do we represent all those shapes and behaviors in code?
 ### The naive Approach
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/project-abm/motion/naive_list.mp4" type="video/mp4">
+  <source src="{{ 'assets/project-abm/motion/naive_list.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -70,7 +70,7 @@ This, however, does not scale well as the simulation grows. Since as the number 
 ### The sparse grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/project-abm/motion/sparse_grid.mp4" type="video/mp4">
+  <source src="{{ 'assets/project-abm/motion/sparse_grid.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -83,7 +83,7 @@ This solves the previous scaling issue, but it introduces another problem. Since
 ### The multi level grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/project-abm/motion/multi_grid.mp4" type="video/mp4">
+  <source src="{{ 'assets/project-abm/motion/multi_grid.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -95,7 +95,7 @@ The result is essentially being able to stack multiple grids on top of each othe
 ## Blows and whistles
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/project-abm/motion/ecs.mp4" type="video/mp4">
+  <source src="{{ 'assets/project-abm/motion/ecs.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -109,10 +109,9 @@ Finally, the last thing we'll be needing is rendering. We add yet another functi
 ## A more realistic perception
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="/assets/project-abm/motion/occlusion.mp4" type="video/mp4">
+  <source src="{{ 'assets/project-abm/motion/occlusion.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
 
 Although the system works as intended, the previous scan was too permissive. I wanted some sort of mechanism that allows a signal to be occluded. To achieve this, I defined a special scan function. It works like this.
 
