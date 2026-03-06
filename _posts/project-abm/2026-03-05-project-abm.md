@@ -26,11 +26,11 @@ Often a lot of wiring up is necessary to keep everything cohesive. That's a deve
 <figcaption> </figcaption>
 </figure>
 
-### Trully alive worlds
+### Truly alive worlds
 
-When you look at games like Rain World or Dwarf Fortress, the magic doesn't come from a level designer planning every single interaction. It comes from emergence. The entities operates by reading the state of their surrounds and following certain rules, dynamically reacting to the enviroment without a hardcoded trigger.
+When you look at games like Rain World or Dwarf Fortress, the magic doesn't come from a level designer planning every single interaction. It comes from emergence. The entities operate by reading the state of their surrounds and following certain rules, dynamically reacting to the environment without a hardcoded trigger.
 
-Those are more authentic experiences, since they aren't locked to a staged environment. Instead, they place the player in a world that's actually alive. One that traditional scripting cannot replicate. Games like this are rare, because standard engines are built for controlling a scene, but to get an actual rich simulation, we need to build for emergence, which has as it foundation the concept of perception.
+Those are more authentic experiences, since they aren't locked to a staged environment. Instead, they place the player in a world that's actually alive. One that traditional scripting cannot replicate. Games like this are rare, because standard engines are built for controlling a scene, but to get an actual rich simulation, we need to build for emergence, which has as its foundation the concept of perception.
 
 <figure>
 <img src="{{ 'assets/project-abm/rain_world.webp' | relative_url }}" alt="Rain World gameplay">
@@ -91,7 +91,7 @@ The fix here is straightforward. Just have bigger tiles. We go back to the tile 
 
 The result is essentially being able to stack multiple grids on top of each other. The signal field then keeps track of the active levels, and on each scan, we iterate those, checking the surroundings. No matter how close or distant the signal may be, this guarantees that it will get perceived just fine.
 
-### Blows and Whistles
+### Bells and Whistles
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
   <source src="{{ 'assets/project-abm/motion/ecs.mp4' | relative_url }}" type="video/mp4">
@@ -119,7 +119,9 @@ We repeat the process. The red signals are blockers, so they get mapped to the s
 
 Although having a limited number of bits is not suited for rendering, where you need pixel-perfect ranges, this simplified model maps nicely to our goal of having more realistic perception and emergent behavior.
 
-## The Running System
+### The Running System
+
+The source code is available on [GitHub](https://github.com/raydroplet/project-abm), implemented in the Rust programming language. This is an early experiment but it already displays some of the capabilities we wanted.
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
   <source src="{{ 'assets/project-abm/engine1.mp4' | relative_url }}" type="video/mp4">
@@ -132,7 +134,9 @@ Although having a limited number of bits is not suited for rendering, where you 
   <source src="{{ 'assets/project-abm/engine2.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-<figcaption>The wolf example from the starte, implemented on top of the signal field</figcaption>
+<figcaption>The wolf example from the start, implemented on top of the signal field</figcaption>
 </figure>
 
-The source code is available on [GitHub](https://github.com/raydroplet/project-abm), implemented in the Rust programming language. This is a small experiment but it already displays some of the capabilities we wanted.
+## Final Notes
+
+<!-- There have been a few architectural concepts i've scraped of this post to keep the narrative cohesive. -->
