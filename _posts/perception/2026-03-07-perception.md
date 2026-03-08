@@ -121,7 +121,7 @@ Although having a limited number of bits is not suited for rendering, where you 
 
 ## The Running System
 
-The source code is available on [GitHub](https://github.com/raydroplet/abm). I've omitted some implementation details to keep this post concise, so feel free to check out the repo if you wanna learn more.
+The source code is available on [GitHub](https://github.com/raydroplet/abm). I've omitted some implementation and architectural details to keep this post concise, so feel free to check out the repo if you want to learn more.
 
 Here are a few demos of the running system. It's an early experiment, but it already displays the emergent capabilities we were aiming for.
 
