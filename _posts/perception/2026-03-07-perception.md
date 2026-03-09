@@ -37,7 +37,7 @@ Those are more authentic experiences, since they aren't locked to a staged envir
 <figcaption> </figcaption>
 </figure>
 
-## ---?
+## The Design
 
 If something sounds too great on paper but it's not widely used, there's usually a good reason for that. But even so, I decided to try it anyway.
 
