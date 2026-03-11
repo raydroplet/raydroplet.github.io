@@ -41,7 +41,7 @@ Those are more authentic experiences, since they aren't locked to a staged envir
 
 If something sounds too great on paper but it's not widely used, there's usually a good reason for that. But even so, I decided to try it anyway.
 
-If we wish for smarter entities, we need a way to represent the world, and some system for them to actually perceive it. Initially, I had envisioned a more complete engine with many key pillars, but I needed to validate whether any of those ideas were actually feasible in the first place. So, I picked perception to start, and the plan I had seems deceptively simple at first glance.
+If we wish for smarter entities, we need a way to represent the world, and some system for them to perceive it. Initially, I had envisioned a more complete engine with many key pillars, but I needed to validate whether any of those ideas were actually feasible in the first place. So, I picked perception to start, and the plan I had seems deceptively simple at first glance.
 
 ### A Simple Model
 
