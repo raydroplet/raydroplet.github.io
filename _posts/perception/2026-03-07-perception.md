@@ -11,7 +11,7 @@ date: 2026-03-07
 ## State of the Art
 
 <figure>
-<img src="{{ 'assets/abm/cyberpunk.png' | relative_url }}" alt="Cyberpunk aesthetic image">
+<img src="{{ 'assets/abm/cyberpunk.webp' | relative_url }}" alt="Cyberpunk aesthetic image">
 <figcaption> </figcaption>
 </figure>
 
