@@ -23,7 +23,7 @@ author:
 # URL settings
 url: "https://raydroplet.github.io" #
 baseurl:
-permalink: /:title/
+permalink: /log/:title/
 google_analytics: # leave it blank if not wish
 fb_appid:
 
@@ -88,3 +88,4 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-postfiles
+  - jekyll-redirect-from

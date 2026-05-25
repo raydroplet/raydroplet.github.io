@@ -2,6 +2,8 @@
 layout: post
 title: "Designing a Perception Engine"
 date: 2026-03-07
+redirect_from:
+  - /perception/
 ---
 
 > This is a write-up of a small perception engine I built in Rust. The goal was simple: give simulated entities a believable sense of the world around them.
