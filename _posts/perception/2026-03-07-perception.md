@@ -13,7 +13,7 @@ redirect_from:
 ## State of the Art
 
 <figure>
-<img src="{{ 'assets/abm/cyberpunk.webp' | relative_url }}" alt="Cyberpunk aesthetic image">
+<img src="{{ 'assets/posts/abm/cyberpunk.webp' | relative_url }}" alt="Cyberpunk aesthetic image">
 <figcaption> </figcaption>
 </figure>
 
@@ -24,7 +24,7 @@ You might have a physics engine with its set of rigid bodies, a rendering engine
 Often a lot of wiring up is necessary to keep everything cohesive. That's a development difficulty and also time consuming.
 
 <figure>
-<img src="{{ 'assets/abm/skyrim.jpg' | relative_url }}" alt="Skyrim NPC with a bucket on their head">
+<img src="{{ 'assets/posts/abm/skyrim.jpg' | relative_url }}" alt="Skyrim NPC with a bucket on their head">
 <figcaption> </figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ When you look at games like Rain World or Dwarf Fortress, the magic doesn't come
 Those are more authentic experiences, since they aren't locked to a staged environment. Instead, they place the player in a world that's actually alive. One that traditional scripting cannot replicate. Games like this are rare, because standard engines are built for controlling a scene, but to get an actual rich simulation, we need to build for emergence, which has as its foundation the concept of perception.
 
 <figure>
-<img src="{{ 'assets/abm/rain_world.webp' | relative_url }}" alt="Rain World gameplay">
+<img src="{{ 'assets/posts/abm/rain_world.webp' | relative_url }}" alt="Rain World gameplay">
 <figcaption> </figcaption>
 </figure>
 
@@ -48,7 +48,7 @@ If we wish for smarter entities, we need a way to represent the world, and some 
 ### A Simple Model
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ 'assets/abm/motion/wolf_chase.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/posts/abm/motion/wolf_chase.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -61,7 +61,7 @@ Given this scenario, how do we represent all those shapes and behaviors in code?
 ### The Naive Approach
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ 'assets/abm/motion/naive_list.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/posts/abm/motion/naive_list.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -72,7 +72,7 @@ This, however, does not scale well as the simulation grows. Since as the number 
 ### The Sparse Grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ 'assets/abm/motion/sparse_grid.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/posts/abm/motion/sparse_grid.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -85,7 +85,7 @@ This solves the previous scaling issue, but it introduces another problem. Since
 ### The Multi Level Grid
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ 'assets/abm/motion/multi_grid.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/posts/abm/motion/multi_grid.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -96,7 +96,7 @@ The result is essentially being able to stack multiple grids on top of each othe
 ### Bells and Whistles
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ 'assets/abm/motion/ecs.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/posts/abm/motion/ecs.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -109,7 +109,7 @@ Finally, the last thing we'll be needing is rendering. We add yet another functi
 ### A More Realistic Perception
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ 'assets/abm/motion/occlusion.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/posts/abm/motion/occlusion.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -128,14 +128,14 @@ The source code is available on [GitHub](https://github.com/raydroplet/abm). I'v
 Here are a few demos of the running system. It's an early experiment, but it already displays the emergent capabilities we were aiming for.
 
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ 'assets/abm/engine1.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/posts/abm/engine1.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 <figcaption>A thousand signals scanning their surroundings and colliding</figcaption>
 
 <figure>
 <video autoplay loop muted playsinline width="100%" style="border-radius: 8px;">
-  <source src="{{ 'assets/abm/engine2.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ 'assets/posts/abm/engine2.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 <figcaption>The wolf example from the start, implemented on top of the signal field</figcaption>
